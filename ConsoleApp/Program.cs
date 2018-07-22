@@ -1,12 +1,18 @@
 ﻿using System;
+using static ConsoleApp.Email;
 
 namespace ConsoleApp
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            Console.WriteLine("Hello World!");
+            var john = new Person("John", "Doe");
+            string EmailFor(Person person) => AppendDomain(AbbreviateName(person));
+            
+            var email = EmailFor(john);
+            
+            Console.WriteLine(email);
         }
     }
 }
